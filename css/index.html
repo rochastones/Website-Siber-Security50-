@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segurança digital para pessoas de 50+</title>
+       <link rel="stylesheet" href="../css/style.css">
+    <style>
+      
+        .menu-toggle {
+            display: block;
+        }
+        
+        /* Menu Responsivo */
+        .menu-toggle {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: white;
+        }
+        
+        .logo img {
+            width: 50px;
+            height: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 8px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            padding: 8px 12px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #3498db;
+            border-radius: 5px;
+        }
+
+            #conteudo {
+            background-color:"../img/logo1.jpg";
+            margin: 1cm 2cm 0.5cm 2cm;
+            padding: 1%;
+        }
+       
+    </style>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript">   
+               
+   function Carregar(pagina){
+        $("#conteudo").load(pagina);
+    }
+   </script> 
+</head>
+
+<body>
+<header>
+   <div class="container">
+    <div class="logo">
+    <img src="../img/logo1.png" alt="LOGO"> 
+    </div>
+    <b><h4>CYBERSECURITY PEOPLE 50+</h4></b>  
+    <span class="menu-toggle">&#9776;</span>
+    <nav>
+       <ul> 
+         <li> <a href="javascript:Carregar('home.html')"> HOME </a></li>
+         <li> <a href="javascript:Carregar('sobre.html')"> SOBRE NÓS </a></li>
+         <li> <a href="javascript:Carregar('servicos.html')"> SERVIÇOS </a></li>
+         <li> <a href="javascript:Carregar('informacao.html')"> INFORMAÇÃO </a></li> 
+         <li> <a href="javascript:Carregar('crimes.html')"> CRIMES </a></li> 
+         <li> <a href="javascript:Carregar('protecao.html')"> PROTEÇÃO </a></li>         
+         <li> <a href="javascript:Carregar('form_denuncia.html')"> DENÚNCIA </a></li>  
+         <li> <a href="javascript:Carregar('form_contato.html')"> CONTATO </a></li> 
+       </ul>
+    </nav>
+    </div>      
+</header>
+
+<div id="conteudo">
+<script>
+   Carregar("home.html");
+</script>
+</div>
+
+</body>
+</html>
+

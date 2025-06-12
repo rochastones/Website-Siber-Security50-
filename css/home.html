@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pagina inicial</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    h1, h2, h3 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .titulo {
+      background-color: #e0ecff;
+      padding: 30px 15px;
+    }
+
+    .titulo h2 {
+      color: #003366;
+      font-size: 28px;
+    }
+
+    .titulo h3 {
+      color: #0066cc;
+      font-size: 18px;
+    }
+
+    .tela-inicial {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      padding: 40px 5%;
+      align-items: center;
+      background-color: #fff;
+    }
+
+    .texto-container {
+      max-width: 100%;
+    }
+
+    .texto-container .titulo {
+      font-size: 20px;
+      color: #0056b3;
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .imagem-container img {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .servicos3 {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 40px 5%;
+      background-color: #eef3f9;
+    }
+
+    .servicos3 a img {
+      width: 160px;
+      height: 100px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .servicos3 a img:hover {
+      transform: scale(1.05);
+    }
+
+    section, p {
+      padding: 0 5%;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    .social-icons {
+      margin-top: 10px;
+    }
+
+    .social-icons img {
+      width: 30px;
+      height: 30px;
+      margin: 0 8px;
+      vertical-align: middle;
+      border-radius: 50%;
+      transition: transform 0.2s;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      .tela-inicial {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .texto-container {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="titulo">
+    <h2>Bem-vindo ao nosso site!</h2>
+    <h3>Aqui você encontra suporte digital adequado para sua necessidade</h3>
+  </div>
+
+  <section class="tela-inicial">
+    <div class="texto-container">
+      <p class="titulo">Orientação Digital para a Melhor Idade: Conectando Gerações e Expandindo Horizontes.</p>
+      <p>A tecnologia faz parte do nosso dia a dia, oferecendo novas formas de comunicação e aprendizado. Para a terceira idade, aprender a usar o computador e a internet pode ser um passo importante para se manter conectado com familiares e o mundo.</p>
+      <p>Nossa orientação digital é didática e respeita o ritmo de cada pessoa, garantindo uma experiência segura e enriquecedora. A inclusão digital fortalece a autonomia, a autoestima e promove bem-estar.</p>
+    </div>
+    <div class="imagem-container">
+      <img src="../img/img-centro.png" alt="Imagem ilustrativa sobre orientação digital para idosos">
+    </div>
+  </section>
+
+  <section class="tela-inicial">
+    <div class="texto-container">
+      <p>Aprender a navegação segura na internet, o uso de redes sociais, aplicativos de mensagens e compras online são passos importantes para garantir uma experiência positiva e protegida.</p>
+      <p>Além disso, a tecnologia pode trazer inúmeros benefícios à saúde mental e emocional dos idosos, proporcionando atividades interativas, como leitura, jogos e videochamadas, que reduzem o isolamento e estimulam o aprendizado contínuo.</p>
+        <p>Potanto, a inclusão digital não é apenas um desafio, mas uma oportunidade de enriquecer a vida da terceira idade, promovendo autonomia, autoestima e bem-estar. Com o apoio adequado, cada clique pode ser um passo rumo a um mundo de possibilidades.</p> 
+    </div>
+    <div class="imagem-container">
+      <img src="../img/orientacao1.jpg" alt="Imagem ilustrativa sobre orientação digital para idosos">
+    </div>
+  </section>
+
+  <div class="servicos3">
+    <p>Pensando nisso, a Sibersecurity se especializou em treinamento e Segurança da Informação. Ajudamos possoas e empresas a alcançar o conhecimeneto e o compliance dentro das principais leis e regulamentos de proteção de dados, como: LGPD, GDPR, ISO 27001 e ISO 27701.</p>
+    <p>Contamos com um time especializado de profissionais para oferecer o mais alto nível de serviços em segurança digital aos nossos clientes. Enquanto você foca no seu nível de conhecimento e negócios, nós protegemos os seus dados!</p>
+ </div>
+
+  <div class="servicos3">
+    <h3>Áreas de atuação:</h3>
+
+    <a href="analise/analise.html">
+      <img src="../img/treinamento.jpeg" alt="Especialistas em aprendizagem digital para idosos" title="Treinamento Digital">
+    </a>  
+    <a href="analise/analise.html">
+      <img src="../img/direito.png" alt="Advogados especializados em Direito Digital" title="Direito Digital">
+    </a>
+    <a href="gerencia/gerencia.html">
+      <img src="../img/lgpd.png" alt="Especialistas em LGPD" title="Consultoria e Adequação LGPD">
+    </a>
+    <a href="quimica/quimica.html">
+      <img src="../img/certif_dpo.png" alt="Certificados DPOs" title="Data Protection Officer">
+    </a>
+    <a href="tecnico/tecnicoti.html">
+      <img src="../img/profissional.png" alt="Especialistas em Segurança da Informação" title="Segurança da Informação">
+    </a>
+  </div><br>
+
+  <div class="servicos3">
+  <p>Nosso objetivo como empresa de cibersegurança é disponibilizar ao nosso cliente todas as orientações e ferramentas para uma proteção completa e efetiva seja no uso comum dos recursos online ou nas atividades de sua empresa. Por isso estamos constantemente atualizando nosso portfólio e buscando as melhores alternativas de treinamento e produtos que ofereçam sempre o que há de melhor no mercado da cibersegurança.</p><br><br>
+</div>
+
+  <footer>
+    <div class="container"> 
+        <h5>CYBERSECURITY PEOPLE 50+ 2025 @ Todos os direitos reservados.</h5>  
+        <h5>Acesse nossas redes sociais </h5>
+        <tr>
+         <td><a href="https://www.instagram.com/synopsyslife/?hl=en"><img src="../img/instagram.jpeg" alt="instagram" width="2%" height="2%"></a></td>&nbsp;&nbsp;  
+         <td><a href="https://www.facebook.com/Synopsys/"><img src="../img/face2.png" alt="face" width="2%" height="2%"></a></td>&nbsp;&nbsp; 
+         <td><a href="https://www.youtube.com/user/synopsys"><img src="../img/youtube.png" alt="youtube" width="2%" height="2%"></a></td> 
+       </tr>
+        
+    </div> 
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de denúncia</title>
+    <link rel="stylesheet" href="../css/style.css">   
+</head>
+
+<body>
+<style>
+    
+            body {
+                font-family: "Calibri", sans-serif;
+                background-color: #f4f4f4;
+                color: #333;               
+            }
+    
+            form {
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+    
+            fieldset {
+                width: 150%;
+                margin: 20px 0;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                background-color: #001b64;
+                color: #fff;
+            }
+    
+            h3 {
+                margin-bottom: 20px;
+            }
+    
+            label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+    
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            input[type="color"],
+            input[type=date],
+            input[type=number],
+            textarea,
+            select,
+            
+            input[type="range"] {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 15px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+                font-size: 16px;
+            }
+    
+            .radio-group {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;                
+            }
+    
+            .radio-group div {
+                display: flex;
+                align-items: center;
+            }
+    
+            .radio-group input {
+                margin-right: 5px;
+            }
+    
+            input[type="submit"], input[type="reset"] {
+                width: 48%;
+                padding: 10px;
+                font-size: 16px;
+                background-color:#cbcdd2;
+                color: #fff;
+                font-weight: bold;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-top: 20px;
+            }
+          
+            input[type="submit"]:hover, input[type="reset"]:hover {
+                background-color: #555;
+            }
+
+</style>
+
+<form action="processa.php" method="post"> 
+            
+                 <fieldset> 
+                    <h3> REGISTRE SUA DENÚNCIA </h3>
+                    <label for="servico">Informe o serviço digital utilizado:</label>
+                    <select name="servico" id="servico">
+                       <option value=""></option>
+                       <option value="whatsApp">WhatsApp</option>
+                       <option value="Telegran">Telegran</option>
+                       <option value="Email">Email</option>
+                       <option value="Instagran">Instagran</option>
+                       <option value="Facebook">Facebook</option>
+                       <option value="Aplicativo de banco">Aplicativo de banco</option>
+                       <option value="Outros">Outros</option>
+                    </select>         
+                    
+                    <label for="data_ocorrencia">Data da ocorrência:</label>
+                    <input type="date" id="data_ocorrencia" name="data_ocorrencia" required><br><br>
+                                                                                    
+                    <h4>Qual o tipo de crime sofrido?</h4>                    
+                            <div class="radio-group">  
+                               <div>
+                               <input type="radio" id="dados" name="opção" value="dados">  
+                               <label for="dados">Roubo de dados</label>
+                               </div>
+                                    
+                            <div>
+                               <input type="radio" id="plagio" name="opção" value="plagio">  
+                               <label for="plagio">Plágio</label>
+                            </div>
+                                    
+                            <div>
+                               <input type="radio" id="financeiro" name="opção" value="financeiro">  
+                               <label for="financeiro">Subtração de valores</label>
+                            </div>
+                                    
+                            <div>
+                               <input type="radio" id="identidade" name="opção" value="identidade">  
+                               <label for="identidade">Roubo de identidade</label>
+                            </div>
+                    
+                            <div>
+                               <input type="radio" id="chantagem" name="opção" value="chantagem">  
+                               <label for="chantagem">Chantagem</label>
+                            </div>
+
+                            <div>
+                               <input type="radio" id="fake" name="opção" value="fake">  
+                               <label for="fake">DeepFake</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="fake News" name="opção" value="fake News">  
+                                <label for="fake News">Fake News</label>
+                             </div>
+
+                             <div>
+                                <input type="radio" id="boolen" name="opção" value="boolen">  
+                                <label for="boolen">Siber boolen</label>
+                             </div>
+                            </div> <br> 
+
+                          <label for="prejuizo">De 0 a 100 qual o impacto da ocorrência?</label><br>
+                          
+                          <div style="position: relative; width: 100%;">
+                            <input type="range" id="prejuizo" min="0" max="100" value="0" style="width: 100%;">
+                            <span id="valorPrejuizo" style="position: absolute; top: -25px; left: 0; transform: translateX(-50%); background: #eee; color: blue; font-weight: bold; padding: 2px 6px; border-radius: 4px;">0</span>
+                          </div>
+                                              
+                            <script>
+                                const range = document.getElementById('prejuizo');
+                                const output = document.getElementById('valorPrejuizo');
+                              
+                                function atualizarPosicao() {
+                                  const valor = +range.value;
+                                  output.textContent = valor;
+                              
+                                  const percent = valor / 100;
+                                  const largura = range.offsetWidth;
+                                  output.style.left = `${percent * largura}px`;
+                                }
+                              
+                                range.addEventListener('input', atualizarPosicao);
+                                atualizarPosicao(); // inicial
+                              </script>
+                                                       
+                            <h4>Foi realizado o boletim de ocorrência policial?</h4>   
+                            
+                            <div style="display: flex; gap: 20px; align-items: center;">
+                                <label style="display: flex; align-items: center; gap: 5px;">
+                                  <input type="radio" id="sim" name="opção" value="sim">
+                                  Sim
+                                </label>
+                              
+                                <label style="display: flex; align-items: center; gap: 5px;">
+                                  <input type="radio" id="nao" name="opção" value="não">
+                                  Não
+                                </label>
+                              </div>                                                                                
+                            
+                 </fieldset> 
+                
+                       <fieldset>                     
+                            <h3> SOLICITE ORIENTAÇÕES A RESPEITO DO SEU CASO</h3>
+                            <h4>Endereço:</h4><br>
+
+                                <label for="rua">Rua:</label>        
+                                <input type="text" id="rua" name="rua"><br>
+
+                                <label for="numero">Número:</label>
+                                <input type="number" id="numero" name="numero"><br>                         
+
+                                <label for="bairro">Bairro:</label>
+                                <input type="text" id="bairro" name="bairro"><br>
+
+                                <label for="cidade">Cidade:</label>
+                                <input type="text" id="cidade" name="cidade"><br>
+                                
+                                <label for="estado">Estado:</label> 
+                                <select id="estado" nome="estado" required>
+                                <option value="pe">PE</option>
+                                <option value="pb">PB</option>
+                                <option value="rn">RN</option>
+                                <option value="rn">BA</option>
+                                <option value="rn">CE</option>
+                                <option value="rn">AL</option>
+                                <option value="rn">PI</option>
+                                <option value="rn">MA</option>
+                                <option value="rn">SE</option>
+                                <option value="rj">RJ</option>
+                                <option value="sp">SP</option>
+                                </select><br>
+
+                                <label for="telefone">DDD + Telefone:</label> 
+                                <input type="text" id="telefone" name="telefone" required> 
+
+                                <label for="email">Email:</label> 
+                                <input type="email" id="email" name="email" required> 
+                              
+                              <div style="display: flex; gap: 20px; align-items: center;">
+                                <form action="/action_page.php">
+                                  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                  <label for="vehicle1">Endereço Válido</label><br>
+                                </form>  
+                             </div><br>
+                                
+                            <h3> Relato detalhado da ocorrência: </h3>  
+                            <textarea name="comentarios" rows = "5" cols = "42"> </textarea> 
+    
+                            <input type="submit" value="ENVIAR"> 
+                            <input type="reset" value="LIMPAR"> 
+                      </fieldset>             
+</form> 
+
+<section id="contato">
+    <div class="container">
+        <a class="btn">FALE CONOSCO</a><br><br>  
+        <img src="../img/localiza.png" align="bottom" width="2%" height="2%">&nbsp;
+        <b>Av Boa Viagem 234, Recife - PE  Brasil</b><br>
+        <img src="../img/email.png" align="bottom" width="2%" height="2%">&nbsp;
+        <b>sybersecurity@people50+.com.br</b><br>
+        <img src="../img/fone.jpeg" align="bottom" width="2%" height="2%">&nbsp;
+        <b>(81) 94542-6288</b><br>
+        <td><a href="https://wa.me/11945426288"> <img src="../img/whats.png" alt="WhatsApp" width="2%" height="2%"><b>WhatsApp</b></a></td>     
+        <br><br>
+    </div> 
+</section>
+
+<footer>
+    <div class="container">
+        <h5>CYBERSECURITY PEOPLE 50+ 2025 @ Todos os direitos reservados.</h5>  
+        <h5>Acesse nossas redes sociais </h5>
+        <tr>
+         <td><a href="https://www.instagram.com/synopsyslife/?hl=en"><img src="../img/instagram.jpeg" alt="instagram" width="2%" height="2%"></a></td>&nbsp;&nbsp;  
+         <td><a href="https://www.facebook.com/Synopsys/"><img src="../img/face2.png" alt="face" width="2%" height="2%"></a></td>&nbsp;&nbsp; 
+         <td><a href="https://www.youtube.com/user/synopsys"><img src="../img/youtube.png" alt="youtube" width="2%" height="2%"></a></td> 
+       </tr>        
+    </div> 
+</footer>
+
+</body>
+</html>
+
